@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>{{.Name}}'s site | {{.Title}}</title>
+<title>{{.Name}}'s site | {{.Title}} </title>
   <meta name="viewport" content="width=device-width, inital-scale=1.0" />
   <!-- jQuery -->
   <script src="//code.jquery.com/jquery.js"></script>
@@ -16,12 +16,12 @@
 
   <style>
     html {
-      background: #97FFFF center center fixed;
+      background: #97FFFF url(/assets/gopher.png);
+      color: #939393;
     }
 
     body {
-      background: url(/assets/gopher.png) center center fixed;
-      color: #939393;
+      background: transparent;
     }
 
     h1 {
@@ -32,7 +32,7 @@
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-inverse" role="navigation">
+  <nav class="navbar navbar-static-top navbar-inverse" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse"
           data-target=".navbar-ex1-collapse">
@@ -41,15 +41,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href='/'>{{.Name}}</a>
+        <a class="navbar-brand" href='#'>{{.Name}}</a>
       </div>
-    <div class="container">
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
+          <li><a href="/views/home">Home</a></li>
           <li><a href="/views/gophers">Gophers</a><li>
-          <li><a href="/views/ahhh">Think Of Something</a></li>
         </ul>
-      </div>
     </div>
   </nav>
 
