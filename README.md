@@ -15,7 +15,7 @@ $ cd $GOPATH/src/github.com/rdallman/goserver
 
 Open the `server.go` file in your favorite text editor
 
-```Go server.go
+``` server.go
 $ EDITOR server.go
 ```
 
