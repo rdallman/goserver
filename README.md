@@ -335,7 +335,7 @@ web 2.0 era, it can't hurt. Plus, there's some really cool stuff going on right
 now with javascript, bootstrap, markdown and all sorts of other cool tools. Some
 of the stuff I've listed below are a few things that are trending now or that
 I've had positive experiences with, but I don't know everything. 
-Enough of me ranting though, __go__ hack around!
+Enough of me ranting though, __go__ hack around! 
 
 ### Exercises and Ideas for Expansion
 
