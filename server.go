@@ -13,6 +13,7 @@ type Page struct {
 
 const viewsPath = "/views/"
 
+//precompile templates
 var templates = template.Must(template.ParseGlob("templates/*.html"))
 
 func handle(t string) (string, http.HandlerFunc) {
@@ -26,7 +27,6 @@ func handle(t string) (string, http.HandlerFunc) {
 }
 
 func main() {
-  //TODO leave main blank and make it a FIXME
   http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
   http.HandleFunc(handle("gophers"))
   http.HandleFunc(handle("home"))
