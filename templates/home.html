@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{.Name}}'s site | {{.Title}} </title>
+  <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font-awesome icons -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+  <!-- purrty fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet" />
+
+  <style>
+    html {
+      background: url(/assets/jordan-hare4.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      color: #939393;
+    }
+
+    body {
+      background: transparent;
+      font-family: "Roboto Condensed";
+      font-weight: 400;
+    }
+
+    h1 {
+      font-family: "Roboto Condensed";
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .panel {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .margin-base-vertical {
+      margin: 40px 0;
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-static-top navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+          data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href='#'>{{.Name}}</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/views/home">Home</a></li>
+          <li><a href="/views/gophers">Gophers</a><li>
+        </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h1 class="margin-base-vertical">Welcome to {{.Name}}'s Web Home</h1>
+                <p>
+                  This is my web server. There are many like it, but this one is mine.
+                </p>
+
+                <p>
+                  Maybe you've decided that it would be a good idea to turn this into a blog
+                  engine. Maybe you've decided to write something really cool and tease the
+                  internet about it before you release it.
+                </p>
+
+                <p>
+                  Hopefully this works as a good base for a simple sign up / landing page for you. 
+                </p>
+
+                <form class="margin-base-vertical">
+                    <p class="input-group">
+                        <span class="input-group-addon"><span class="icon-envelope"></span></span>
+                        <input type="text" class="form-control input-large" name="email" placeholder="jonsnow@knowsnothi.ng" />
+                    </p>
+                    <p class="help-block text-center"><small>We won't send you spam. Unsubscribe at any time.</small></p>
+                    <p class="text-center">
+                        <button type="submit" class="btn btn-success btn-large">Keep me posted</button>
+                    </p>
+                    </span>
+                </form>
+
+                <p>
+                  Let me know if you have any questions <a href="http://twitter.com/rdallman10">@rdallman10</a>
+                </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
