@@ -216,7 +216,7 @@ Inside of `.Must`, you'll see `template.ParseGlob`, which can take a pattern and
 one at a time like we were doing previously. `*.html` simply means all `.html`.
 Pre-compiling the templates has some (huge) speed benefits, as well.
 
-Inside of the method, 
+Inside of `renderTemplate`, we have some new stuff.
 `templates.ExecuteTemplate()` can replace our old `t.Execute`,
 and the transition there should be pretty intuitive. This time, though, we're
 actually going to check for the error. Using the parameter to pick the actual
