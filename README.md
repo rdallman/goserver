@@ -153,19 +153,9 @@ Add the following to your main()
 http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
 ```
 
-So there's a lot going on here. This is similar to a lot of our previous
-`http.HandleFunc` where it takes a path and a func. If you go to
-<http://golang.org/pkg/net/http/#Handle> you can see the signature for
-`http.Handle`. It takes a path and a `Handler`. In the above, you can see we
-have `http.StripPrefix`, which will return a `Handler`. `http.StripPrefix`
-returns a `Handler`, and takes a path and a `Handler`. Wait, wha? It takes a
-`Handler` and returns a `Handler`? `http.StripPrefix` can be used in order to
-change the current path of the items for the `Handler` in its params. In our
-case, we're pretty much using it to add the leading "/". We could serve up the
-dir "bob/" at "/jim/" if we wanted by using `http.StripPrefix`. If this doesn't 
-make sense, don't sweat it too much, just wanted to show `http.StripPrefix` 
-because it could come in handy (there's also an exercise at the end that uses
-this)
+There's not too much that you need to know here, mainly just that we're using
+`http.FileServer` to serve up all of the files in our `assets/` folder.
+`StripPrefix` pretty much just adds the leading "/" so that we have a valid url.
 
 Now you should __compile and run__ and check out `localhost:8080/views/gophers`
 
@@ -259,12 +249,16 @@ Now we are getting the title of the page from the actual URL. This should make
 sense to do, since we were specifying it twice and rendering the template based off
 the name of the page anyway. To do this, we are using a slice. Go slices are
 very powerful and very popular in Go, so take a second to make sure that this
-makes sense. If you'll look at `[len(viewPath):]`, the colon syntax may make some
+makes sense. 
+
+If you'll look at `[len(viewPath):]`, the colon syntax may make some
 degree of sense if you're familiar with Python lists / strings. Go's slices are
 very similar to this, but are a little bit lower level and have a better degree
 of control. I'm not going to get into the semantics, but there's a really good article at
 <http://blog.golang.org/go-slices-usage-and-internals> that will go more in
-depth if you'd like to read it later. Back to the colon, you can see that we are
+depth if you'd like to read it later. 
+
+Back to the colon, you can see that we are
 specifying the value of the length of the constant "/views/" (7) and then 'slicing'
 it. What this will do, effectively, is get rid of the first 7 bytes ("/views/") 
 from `r.URL.PATH` and return whatever is left. So, in the case of
@@ -362,8 +356,7 @@ Enough of me ranting though, __go__ hack around!
 * simplify all of the HTML, it's super repetitive at the moment. e.g. Learn about
   partials, try using `template.HTML`
 * put the CSS in a style sheet and make the pages look how you want
-* render "home.html" as your "/" using `http.StripPrefix` (handle() doesn't have
-  to return 2 values)
+* render "home.html" as your "/" (handle() doesn't have to return 2 values)
 * Listen for changes on the file system to recompile your templates, so no more
   restarting your server
 * play around with Handlebars.js or Angular.js or make an app using Ember.js
