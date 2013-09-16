@@ -1,9 +1,9 @@
 # A Go HTTP Server to write Home about
 
 If you haven't already and you're even somewhat unfamiliar with Go, I'd
-recommend to first tackle my first tutorial at
+recommend to first tackle my tutorial at
 <http://github.com/rdallman/gofirst>. A lot of setting up Go is covered there,
-and is actually needed to finish this tutorial. 
+and it is actually recommended in order to complete this tutorial.
 
 ### go get it (if you haven't)
 
