@@ -29,8 +29,8 @@ $ vim server.go
 
 You'll notice `main()` is empty except for a `FIXME` and that I've provided an `indexHandler`.
 `indexHandler` will work as is. Just worry about `main()` for now.
-Use what you learned from your first web server to fill 
-in `main()` so that `localhost:8080/` will work with `indexHandler`.
+Use the code from `firstserver.go` in the first tutorial as a reference to fill in `server.go`'s
+`main()` so that `localhost:8080/` will work with `indexHandler`.
 Hint hint, wink wink: This should be 2 lines. I should also mention the
 following two web pages that you might want to keep open in a tab:
 
@@ -56,7 +56,9 @@ Please do not move on before you are getting a light blue page at
 ### [Say my name](http://b.vimeocdn.com/ts/400/598/400598295_640.jpg)
 
 Now take a look at `indexHandler`. The first line is instantiation of a Page
-struct, using what should be the now familiar `:=` syntax. The second line is a
+struct, using what should be the now familiar `:=` syntax.
+
+The second line is a
 little less straight forward. `template.ParseFiles()` will return a Template
 object and an Error object. Errors are quite common as a multiple return value
 in Go. In a lot of cases though, or simply to test if things are working first,
@@ -67,7 +69,9 @@ nice, because it will keep your code clean. Go will also yell at you if you try
 to compile with a library import that you do not use. Both these caveats can be
 annoying at first, and can encourage people to simply comment things out, but I
 would encourage you to simply use version control and not commit commented code
-(you can roll back to it). The third line, `t.Execute(w,p)` will simply write
+(you can roll back to it).
+
+The third line, `t.Execute(w,p)` will simply write
 the contents of the template in conjunction with our Page `p` as a response to
 the http request. Now that you understand what's going on...
 
@@ -351,6 +355,8 @@ Enough of me ranting though, __go__ hack around!
 * put the CSS in a style sheet and make the pages look how you want
 * render "home.html" as your "/" using `http.StripPrefix` (handle() doesn't have
   to return 2 values)
+* Listen for changes on the file system to recompile your templates, so no more
+  restarting your server
 * play around with Handlebars.js or Angular.js or make an app using Ember.js
 * make a blog engine in Markdown using "BlackFriday" markdown library
 * Turn this into your own personal page
