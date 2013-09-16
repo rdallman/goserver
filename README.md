@@ -133,10 +133,10 @@ Make sure to add a `Title` attribute of type `string` to our `Page` struct, as w
 Feel free to title this page whatever you want for now, "gophers" is plenty appropriate
 if you're not feeling creative. 
 
-If your page still has text on it, something has gone terribly wrong. 
-
 __compile and run__ until you at least see a black bar across the top of the
 page at `localhost:8080/views/gophers`
+
+If your page still has text on it, something has gone terribly wrong. 
 
 ### [Yeahhhhh, if you could just get those pictures working, that'd be greattttt](https://si0.twimg.com/profile_images/1202780279/download.jpg)
 
