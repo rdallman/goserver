@@ -121,12 +121,17 @@ Congrats, you've served up your first halfway decent HTML in Go.
 
 Now you'll need to make your own handler, hot shot.
 
-Make a `gopherHandler` in `server.go` with the appropriate parameters and serve
-up the file `gophers.html` (it's a thing) at `localhost:8080/views/gophers`.
+Go ahead and add the following to your `main()`:
+
+```go
+http.HandleFunc("/views/gophers/", gopherHandler)
+```
+
+Create a function, `gopherHandler` with the appropriate parameters and serve up
+the file `gophers.html` (it's a thing) at `localhost:8080/views/gophers`.
 Make sure to add a `Title` attribute of type `string` to our `Page` struct, as well.
 Feel free to title this page whatever you want for now, "gophers" is plenty appropriate
-if you're not feeling creative. Don't forget to add a new `http.HandleFunc` in
-main for your new Handler.
+if you're not feeling creative. 
 
 If your page still has text on it, something has gone terribly wrong. 
 
