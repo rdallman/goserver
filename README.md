@@ -76,7 +76,9 @@ would encourage you to simply use version control and not commit commented code
 The third line, `t.Execute(w,p)` will simply write
 the contents of the template in conjunction with our Page `p` as a response to
 the http request. This might make more sense after you get a chance to look at
-the template in another minute. First let's get our server working, though.
+the template in another minute. Basically, it will take the items we give it
+from a `Page` p and put them in the specified `.html` file. 
+First let's get our server working, though.
 
 Inside of `indexHandler` you should have seen a `//FIXME`, make it work.
 
@@ -121,7 +123,7 @@ Now you'll need to make your own handler, hot shot.
 
 Make a `gopherHandler` in `server.go` with the appropriate parameters and serve
 up the file `gophers.html` (it's a thing) at `localhost:8080/views/gophers`.
-Make sure to add a `Title` attribute of type `string` to our `Page`, as well.
+Make sure to add a `Title` attribute of type `string` to our `Page` struct, as well.
 Feel free to title this page whatever you want for now, "gophers" is plenty appropriate
 if you're not feeling creative. 
 
@@ -206,10 +208,13 @@ func renderTemplate(w http.ResponseWriter, r *http.Request, t string) {
 ```
 
 Yet again, lots of stuff going on. `template.Must` will make sure that our
-templates are all valid before we try to load any of them, and will panic if any
-of them are not. Also, pre-compiling the templates has some (huge) speed benefits.
-`template.ParseGlob` can take a pattern and parse all of the files, instead of
+templates are all valid before we try to load any of them, and will "panic" if any
+of them are not. "panic" is basically throwing an error, but if you're curious, 
+you can find "panic" well-documented in the Go docs. 
+
+Inside of `.Must`, you'll see `template.ParseGlob`, which can take a pattern and parse all of the files, instead of
 one at a time like we were doing previously. `*.html` simply means all `.html`.
+Pre-compiling the templates has some (huge) speed benefits, as well.
 
 Inside of the method, 
 `templates.ExecuteTemplate()` can replace our old `t.Execute`,
