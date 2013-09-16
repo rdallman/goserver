@@ -293,7 +293,7 @@ need to do is copy the following into your `server.go`:
 ```go
 func handle(t string) (string, http.HandlerFunc) {
   return viewsPath+t, func(w http.ResponseWriter, r *http.Request) {
-    p := &Page{ Name: "Reed", Title: t }
+    p := &Page{ Name: "YOURNAME", Title: t }
     err := templates.ExecuteTemplate(w, t+".html", p)
     if err != nil {
       http.NotFound(w, r)
