@@ -342,7 +342,7 @@ is hopefully a great base to build web apps and/or sites in Go. Obviously what
 we have built is rather simple; only 2 pages, but you should now be pretty familiar
 with Go's `net/http` package, as well as some of the functionality of the core
 library. Go encourages concise, clear code and what I've given you should be
-considered `idiomatic` Go code, so it is a good spring board into other things. 
+considered "idiomatic" Go code, so it is a good spring board into other things. 
 I really hope this was a helpful foray into Go, and that I've piqued your
 interest in it.  
 
