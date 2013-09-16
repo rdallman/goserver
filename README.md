@@ -222,8 +222,7 @@ With this in place, you can go ahead and replace the body of your `indexHandler`
 and `gopherHandler` with something much more concise. Both should be one line.
 I've left this as an exercise for you, if you will carefully look at our
 `renderTemplate` method, the Handler methods should just contain a call to `renderTemplate`.
-Make sure to add `Title: "index"` to your `Page` in `indexHandler`, and to be
-very careful with your titles, since we're using that to render `title+".html"`
+Make sure to be very careful with your titles, since we're using that to render `title+".html"`
 in `renderTemplate()`.
 
 __compile and run__ and make sure that both of your pages still work first, then move
@@ -267,11 +266,13 @@ Back to the colon, you can see that we are
 specifying the value of the length of the constant "/views/" (7) and then 'slicing'
 it. What this will do, effectively, is get rid of the first 7 bytes ("/views/") 
 from `r.URL.PATH` and return whatever is left. So, in the case of
-"/views/gophers", title := "gophers". 
+"/views/gophers", title := "gophers".
 
 Now you should __compile and run__ and point your browser to
 `localhost:8080/views/home`. Make sure this is working before moving on (you
-should see Jordan-Hare). You don't need to replace all of your handlers with
+should see Jordan-Hare). If Jordan-Hare doesn't appear, make sure that your new
+page is being handled correctly in `main()`.
+You don't need to replace all of your handlers with
 this new slice stuff, we'll take care of that shortly.
 
 ### [Remember, remember the 5th of November](https://si0.twimg.com/profile_images/1769643466/258844_104131489680984_104118713015595_32268_721285_o__1_.jpeg)
