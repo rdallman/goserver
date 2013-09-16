@@ -63,7 +63,9 @@ little less straight forward. `template.ParseFiles()` will return a Template
 object and an Error object. Errors are quite common as a multiple return value
 in Go. In a lot of cases though, or simply to test if things are working first,
 it can be useful to just get a `_`, which means you do not intend to handle
-that return value: in our case, the Error. This is necessary because Go's
+that return value: in our case, the Error. 
+
+This is necessary because Go's
 compiler will yell at you if you get a value but do nothing with it. This is
 nice, because it will keep your code clean. Go will also yell at you if you try
 to compile with a library import that you do not use. Both these caveats can be
@@ -73,7 +75,8 @@ would encourage you to simply use version control and not commit commented code
 
 The third line, `t.Execute(w,p)` will simply write
 the contents of the template in conjunction with our Page `p` as a response to
-the http request. Now that you understand what's going on...
+the http request. This might make more sense after you get a chance to look at
+the template in another minute. First let's get our server working, though.
 
 Inside of `indexHandler` you should have seen a `//FIXME`, make it work.
 
@@ -116,7 +119,7 @@ Congrats, you've served up your first halfway decent HTML in Go.
 
 Now you'll need to make your own handler, hot shot.
 
-Make a `gopherHandler` with the appropriate parameters and serve
+Make a `gopherHandler` in `server.go` with the appropriate parameters and serve
 up the file `gophers.html` (it's a thing) at `localhost:8080/views/gophers`.
 Make sure to add a `Title` attribute of type `string` to our `Page`, as well.
 Feel free to title this page whatever you want for now, "gophers" is plenty appropriate
