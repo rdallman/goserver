@@ -125,7 +125,8 @@ Make a `gopherHandler` in `server.go` with the appropriate parameters and serve
 up the file `gophers.html` (it's a thing) at `localhost:8080/views/gophers`.
 Make sure to add a `Title` attribute of type `string` to our `Page` struct, as well.
 Feel free to title this page whatever you want for now, "gophers" is plenty appropriate
-if you're not feeling creative. 
+if you're not feeling creative. Don't forget to add a new `http.HandleFunc` in
+main for your new Handler.
 
 If your page still has text on it, something has gone terribly wrong. 
 
@@ -333,7 +334,7 @@ gophers or home.
 __compile and run__ until "/views/gophers" and "/views/home" work as they did
 previously. 
 
-### [GOOD JOB MAN](http://www.freestockphotos.biz/pictures/15/15160/Illustration+of+a+gold+star.png)
+### [GOOD JOB MAN](http://cdn.rsvlts.com/wp-content/uploads/2013/01/wwb0d.gif)
 
 Now your entire web server should be two methods, `handle` and `main`. Pretty
 cool, huh? That's all it takes to serve up a few web pages. What I've given you
