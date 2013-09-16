@@ -324,7 +324,7 @@ renderTemplate()
 
 I'd encourage you to just forget about `index` for now, since it's really a
 matter of taste how to handle that from here on out, I'll leave it as an
-exercise. For now, just worry about rendering "gophers" and "home".
+exercise for the end. For now, just worry about rendering "gophers" and "home".
 To get accustomed to our new method, I'd like for you to fix up `main()`
 yourself. Basically all that needs to be changed (re: simplified) are the parameters inside of
 each `http.HandleFunc`, and you should go ahead and delete the line for handling
